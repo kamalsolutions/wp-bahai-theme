@@ -28,7 +28,7 @@ register_nav_menu('primary','primary');
   require_once dirname(__File__).'/wp_bootstrap_navwalker.php';
 
 //hook plugins into theme
- include_once dirname( __FILE__ ).'/wp-bahai-plugins.php';
+ // include_once dirname( __FILE__ ).'/wp-bahai-plugins.php';
 
 //hook plugins into theme
 
