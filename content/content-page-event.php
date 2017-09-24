@@ -1,34 +1,64 @@
-<article  id="post-<?php the_ID(); ?>" <?php post_class(); ?> class="page">
-        <?php $args =array(
-        'post_type'=>'event');
-$query= new WP_QUERY($args);
-         ?>
-    <?php if($query->have_posts()):while($query->have_posts()) : $query->the_post();?>
-            
-        <section class="blog-wrapper">
-          <div class="col-lg-4  col-sm-6">
-                  <div class="thumbnail" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                        <?php if(has_post_thumbnail()){
-                                            the_post_thumbnail('thumbnail');
-                                        }else{ ?>
-                                            <img src="..." alt="" class="img-responsive img-thumbnail" />
+<?php
+/**
+ * Template part for displaying page content in page.php
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package _s
+ */
 
-                                            <?php } ?>
+?>
 
-                <h3 class="post-title"><a href="<?php the_permalink()?>"> <?php the_title(); ?></a></h3>
-                <!-- edit link --><h6><?php edit_post_link('edit','<small class="edit">','</small>') ?> <span><?php echo get_the_date(); ?></span></h6>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+		<?php the_title( '<h2 class="entry-title text-center">Our ', '</h2>' ); ?>
+	</header><!-- .entry-header -->
+    	<section class="container">	
+		<section class="col-md-12">
+		<?php
+        $numb_post=3;
+        $args=array(
+            'post_type'=>'event',
+            'post_per_page'=>$numb_post
+        );
+			$query= new WP_Query($args);
+			?>
+<?php if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); ?>
+        
+		<section class="col-md-4 ">
+                <section class=" latest_post_content_wrapper">
+                 <section class="thumbnail">
 
-                <section class="post-content">
-                        <?php the_excerpt(); ?>
+                 <?php if(has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('thumbnail'); ?>
+                    <?php else: ?>
+                    <img class="img-responsive" src="<?php bloginfo('template_directory');?>/img/events.jpg" />
+                 <?php endif; ?>
+                  <section class="latest_post_content_title ">
+                     <h4 class="post_title page_header"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                     <h6> 
+                     <ul class="list-inline"> 
+                        <li> <span class="fa fa-calendar"></span> <?php the_field('date'); ?></li>
+                        <li></li>
+                     </ul>
+                     </h6>
+                  </section>
+                 
 
-                        <br>
-
-
+                    <section class="single_post_content_excerpt">
+                    <?php echo strip_tags(the_excerpt()); ?>
+                    </section>
+                     </section>
+                     </section>
                 </section>
 
 
-                  </div>
-            </div>
-        </section>
-        <?php   endwhile; endif; wp_reset_postdata(); ?>
+                
+<?php endwhile;endif; wp_reset_postdata(); ?>
+
+
+			</section>
+		</section>
+	</section>
 </article>
+
