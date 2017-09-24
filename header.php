@@ -14,7 +14,7 @@
 
 <section id="navigation" class="navbar">
           <div class="navbar-header ">
-              <div class="navbar-brand" style="margin-top: -10px"><span><img src="<?php bloginfo('template_directory');?>/assets/img/"  title="bahai youth logo" alt="logo" class="logo img-responsive" /></div>
+              <div class="navbar-brand"><span><img src="<?php bloginfo('template_directory');?>/assets/img/logo-2.png"  title="bahai youth logo" alt="logo" class="logo img-responsive" /></div>
                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
 
                    <span class="icon-bar"></span>
