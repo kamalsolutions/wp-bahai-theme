@@ -1,11 +1,5 @@
 <?php
-/**
- * Template part for displaying single event
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package _s
- */
+
 
 ?>
 <section class="row" id="single_event_page">
