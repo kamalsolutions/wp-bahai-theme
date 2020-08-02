@@ -7,7 +7,6 @@
 ### ignoring all images uploaded ###
 
 /uploads/**
-/assets/**
 
 ### Sass ###
 .sass-cache/**
