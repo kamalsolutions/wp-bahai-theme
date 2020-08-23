@@ -1,11 +1,11 @@
-<?php get_header();?>
+<?php get_header(); ?>
 
-    <section class="container">
+<section class="container">
 
-            <?php if (have_posts()): ?>
-            	<?php get_template_part('content/content', 'single-kid');?>
-            <?php endif?>
+    <?php if (have_posts()) : ?>
+        <?php get_template_part('content/content-single-kids_category'); ?>
+    <?php endif ?>
 
-    </section>
+</section>
 
-<?php get_footer();?>
+<?php get_footer(); ?>
